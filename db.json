@@ -1,0 +1,53 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "vegetables",
+            "image": "/assets/veg.jpg",
+            "price": "1500",
+            "description": "Our farmers do supply very fresh wine grapes were the customer can acess them by placing an order"
+        },
+        {
+            "id": 2,
+            "name": "fruits",
+            "image": "/assets/fruits.jpg",
+            "price": "2000",
+            "description": "Our farmers do supply very fresh wine grapes were the customer can acess them by placing an order"
+        },
+        {
+            "id": 3,
+            "name": "seafoods",
+            "image": "/assets/seafood.jpg",
+            "price": "3000",
+            "description": "Our farmers do supply very fresh wine grapes were the customer can acess them by placing an order"
+        },
+        {
+            "id": 4,
+            "name": "Wine",
+            "image": "/assets/wine.jpg",
+            "price": "4000",
+            "description": "Our farmers do supply very fresh wine grapes were the customer can acess them by placing an order"
+        },
+        {
+            "id": 5,
+            "name": "dairy products",
+            "image": "/assets/dairy.jpeg",
+            "price": "5000",
+            "description": "Our farmers do supply very fresh wine grapes were the customer can acess them by placing an order"
+        },
+        {
+            "id": 6,
+            "name": "Arabic spices",
+            "image": "/assets/spice-1.jpg",
+            "price": "6000",
+            "description": "Our farmers do supply very fresh wine grapes were the customer can acess them by placing an order"
+        },
+        {
+            "id": 7,
+            "name": "grapes",
+            "image": "/assets/grapes-wine.jpg",
+            "price": "7000",
+            "description": "Our farmers do supply very fresh wine grapes were the customer can acess them by placing an order"
+        }
+    ]
+}

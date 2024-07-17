@@ -1,0 +1,362 @@
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+.container {
+  text-align: center;
+}
+
+.cart-icon {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cart-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+
+.cart-menu.visible {
+  right: 0;
+}
+
+.cart-menu h2 {
+  margin: 20px 0 10px;
+}
+
+.cart-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-menu li {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+}
+
+.cart-menu li:last-child {
+  border-bottom: none;
+}
+
+.checkout-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.checkout-button:hover {
+  background-color: #218838;
+}
+
+.clear-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.clear-button :hover {
+  background-color: #218838;
+}
+
+.container {
+  text-align: center;
+}
+
+.rate-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.rate-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.rating-stars {
+  margin-top: 10px;
+}
+
+.rating-stars.hidden {
+  display: none;
+}
+
+.rating-stars .star {
+  font-size: 24px;
+  color: #ffd700;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.rating-stars .star:hover,
+.rating-stars .star.active {
+  color: #ffcc00;
+}
+
+.about-us {
+  background-image: url('/assets/tomatoes.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: large;
+}
+
+
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* background-image: url('/assets/spices-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.card {
+  width: 300px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.card-img {
+  width: 200%;
+  height: auto;
+  display: inline-block;
+  margin: 5px;
+
+
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+
+}
+
+.card-text {
+  font-size: 1rem;
+  color: black;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+  padding: 20px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right,
+.footer-bottom {
+  width: 33.33%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.footer-left {
+  border-right: 1px solid #777;
+}
+
+.footer-right {
+  border-left: 1px solid #777;
+}
+
+.footer h3 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.footer p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.social-icons {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom p,
+.footer-bottom ul {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.footer-bottom ul {
+  list-style-type: none;
+}
+
+.footer-bottom ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-bottom ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-bottom ul li a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO-CODER</title>
+    <link rel="stylesheet" href="pro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About smart soko">About smart soko</a></li>
+            <li><a href="#Products">Products</a></li>
+            <li><a href="#Contact Us">Contact Us</a></li>
+            <li><a href="#Subscribe">Subscribe</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <div id="cartIcon" class="cart-icon">
+            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+        </div>
+        <div id="cartMenu" class="cart-menu hidden">
+            <h2>Shopping Cart</h2>
+            <ul id="cartItems"></ul>
+            <button id="checkoutButton" class="checkout-button">Checkout</button>
+            <button id="clearButton" class="clear-button">Clear</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <button id="rateButton" class="rate-button">Rate Us</button>
+        <div id="ratingStars" class="rating-stars hidden">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+    </div>
+    <div id="Home">
+        <h1>SMART SOKO</h1>
+        <p>Our customers matter</p>
+        <p>Welcome to Smart Soko, your one-stop solution for shopping.</p>
+    </div>
+    <div class="about-us" id="About smart soko">
+        <h2>About smart soko</h2>
+        <p>
+        <ul>
+            <li>We offer you farm-to-table products that have been gotten from many farmers and from
+                different parts of
+                the globe.</li>
+            <li>With over 150,000 farmers from all over the world ,our powerfull research makes finding
+                the best
+                products farm products a breeze.</li>
+            <li>We are committed to providing you with the best possible products and services. </li>
+            <li>We are here to help you find the perfect product for your needs.</li>
+            <li>we have a strong community of satisfied customers who trust us to provide you with the
+                best possible
+                products and services.</li>
+        </ul>
+
+        </p>
+        <h3>our core values</h3>
+        <p>
+        <ol>
+
+            <li>YOUR SUCESS IS OUR SUCESS &#x28;we're customer centric&#x29;</li>
+            <li> We achive greateness together , learning from both triumphs and challenges &#x28;team
+                spirit is
+                key&#x29; </li>
+        </ol>
+        </p>
+
+    </div>
+
+    <!-- Adding cards here -->
+    <div id="Products">
+        <h2>Products</h2>
+        <div class="card-container">
+            <!-- <div class="card">
+                <div class="card-img"></div>
+                <div class="card-title">[farm product id]</div>
+                <div class="card-text">[description]</div>
+                <div class="card-content"></div>
+                <div>
+                    <a href="#" class="btn">Add To Cart</a>
+                </div>
+            </div> -->
+        </div>
+
+
+
+        <section class="contact-section" id="Contact Us">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong>mueniannglorious@gmail.com</p>
+                <p><strong>Phone:</strong> 0706026542</p>
+                <p><strong>Address:</strong> Rongai,kajiado</p>
+            </div>
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer" id="Subscribe">
+            <div class="footer-left">
+                <h3>Smart Soko</h3>
+                <p>Welcome to Smart Soko, your one-stop solution for shopping.
+                </p>
+
+                <ul class="social-icons">
+                    <h3>follow us</h3>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <p><i class="fa fa-envelope"></i>mueniannglorious@gmail.com</p>
+                <p><i class="fa fa-phone"></i>0706026542</p>
+                <p><i class="fa fa-map-marker"></i>Rongai,kajiado</p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Smart Soko. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </footer>
+        <script type="text/javascript" src="pro.js"></script>
+</body>
+
+</html>
