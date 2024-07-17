@@ -73,11 +73,4 @@ ratingStars.forEach(star => {
     });
 });
 
-// Toggle switch functionality (Dark/Light mode)
-document.getElementById("toggle").addEventListener("click", function() {
-    if (this.checked) {
-        document.body.classList.add("dark-mode");
-    } else {
-        document.body.classList.remove("dark-mode");
-    }
-});
+
