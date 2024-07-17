@@ -48,6 +48,13 @@
             "image": "/assets/grapes-wine.jpg",
             "price": "7000",
             "description": "Our farmers do supply very fresh wine grapes were the customer can acess them by placing an order"
+        },
+        {
+            "id": 8,
+            "name": "meat products",
+            "image": "/assets/beef.jpeg",
+            "price": "8000",
+            "description": "Our farmers do supply very fresh wine grapes were the customer can acess them by placing an order"
         }
     ]
 }
