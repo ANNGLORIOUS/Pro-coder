@@ -24,6 +24,12 @@ nav ul li a:hover {
   background-color: #555;
 }
 
+
+
+.icon-toggle {
+  margin-right: 8px;
+}
+
 .container {
   text-align: center;
 }
@@ -148,7 +154,7 @@ nav ul li a:hover {
 }
 
 .about-us {
-  background-image: url('/assets/tomatoes.jpg');
+  /* background-image: url('/assets/tomatoes.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -247,7 +253,7 @@ nav ul li a:hover {
   margin: 8px 0;
 }
 
-.contact-form form {
+.contact-form  {
   display: flex;
   flex-direction: column;
 }
@@ -359,4 +365,56 @@ nav ul li a:hover {
 
 .footer-bottom ul li a:hover {
   text-decoration: underline;
+}
+
+.toggle-switch {
+
+  position: relative;
+
+  display: inline-block;
+
+  width: 60px;
+
+  height: 34px;
+
+  background-color: #ccc;
+
+  border-radius: 17px;
+
+  cursor: pointer;
+
+}
+
+.toggle-switch:before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 26px;
+
+  height: 26px;
+
+  border-radius: 50%;
+
+  background-color: white;
+
+  top: 4px;
+
+  left: 4px;
+
+  transition: 0.4s;
+
+}
+
+input:checked+.toggle-switch {
+
+  background-color: #2196F3;
+
+}
+
+input:checked+.toggle-switch:before {
+
+  transform: translateX(26px);
+
 }
