@@ -42,8 +42,8 @@ function displayProducts(products) {
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn')) {
         event.preventDefault();
-        const productId = event.target.getAttribute('product-id');
-        const productPrice = parseInt(event.target.getAttribute('product-price'));
+        const productId = event.target.getAttribute('data-id');
+        const productPrice = parseInt(event.target.getAttribute('data-price'));
 
 
         
