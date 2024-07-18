@@ -56,25 +56,25 @@ nav ul li a:hover {
   overflow-y: auto;
 }
 
-.cart-menu.visible {
+.cart-menu-hidden.visible {
   right: 0;
 }
 
-.cart-menu h2 {
+.cart-menu-hidden h2 {
   margin: 20px 0 10px;
 }
 
-.cart-menu ul {
+.cart-menu-hidden ul {
   list-style-type: none;
   padding: 0;
 }
 
-.cart-menu li {
+.cart-menu-hidden li {
   border-bottom: 1px solid #eee;
   padding: 10px;
 }
 
-.cart-menu li:last-child {
+.cart-menu-hidden li:last-child {
   border-bottom: none;
 }
 

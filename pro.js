@@ -43,22 +43,25 @@ document.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn')) {
         event.preventDefault();
         const productId = event.target.getAttribute('data-id');
+        console.log(productId);
         const productPrice = parseInt(event.target.getAttribute('data-price'));
-
+        console.log(productPrice);
 
         
         // Find product in the fetched data
         const product = {
             id: productId,
             price: productPrice,
-            name: event.target.parentElement.querySelector('.card-title').innerText,
-            image: event.target.parentElement.querySelector('card-img').src
+            // name: event.target.parentElement.querySelector('.card-title').innerText,
+            // image: event.target.parentElement.querySelector('.card-img')
 
         
         };
+        console.log(product);
         
 
         cart.push(product); // Add product to cart
+        console.log(cart);
         totalAmount += productPrice; // Update total amount
         updateCart(); // Update the cart display
     }
@@ -69,14 +72,10 @@ function updateCart() {
     const cartItems = document.getElementById('cartItems');
     cartItems.innerHTML = '';
 
-    cart.forEach(products => {
+    cart.forEach(product => {
         const li = document.createElement('li');
-        li.innerHTML = `<img src="${products.image}" alt="${products.name}" style="width: 50px; height: 50px;"> ${products.name} - Ksh ${products.price}`;
+        li.innerHTML = `<img src="${product.image}" alt="${product.name}" style="width: 50px; height: 50px;"> ${product.name} - Ksh ${product.price}`;
         cartItems.appendChild(li);
-        
-
-
-
     });
 
     // Display total amount
@@ -89,13 +88,13 @@ function updateCart() {
 
 // Toggle cart menu visibility
 document.getElementById('cartIcon').addEventListener('click', () => {
-    const cartMenu = document.getElementById('cartMenuhidden');
-    cartMenu.classList.toggle('hidden');
+    const cartMenu = document.getElementById('cartMenu');
+    cartMenu.classList.toggle('cart-menu-hidden');
 
 });
 
 // Clear cart
-document.getElementById('clearButton').addEventListener('click', () => {
+document.getElementById('clearButton').addEventListener('click', function () {
     cart.length = 0; // Clear cart array
     totalAmount = 0; // Reset total amount
     updateCart(); // Update the cart display
