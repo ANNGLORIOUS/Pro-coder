@@ -1,13 +1,16 @@
+let cart = []; // Array to hold cart items
+let totalAmount = 0; // Variable to hold total amount
+
 document.addEventListener('DOMContentLoaded', function() {
-    fetchProducts(); // Call to fetch products after DOM content is loaded
+    fetchProducts(); // Fetch products when the DOM content is loaded
 });
 
 // Function to fetch products from the server
 function fetchProducts() {
-    fetch('http://localhost:3000/products')
+    fetch('http://localhost:3000/products') 
         .then(response => response.json())
         .then(products => {
-            displayProducts(products); // Call to display products after fetching
+            displayProducts(products); // Display products after fetching
         })
         .catch(error => {
             console.error('Error when fetching products:', error);
@@ -17,7 +20,7 @@ function fetchProducts() {
 // Function to display products on the cards
 function displayProducts(products) {
     const cardContainer = document.querySelector('.card-container');
-    cardContainer.innerHTML = ''; // Clear existing content
+    cardContainer.innerHTML = ''; 
 
     products.forEach(product => {
         const card = document.createElement('div');
@@ -28,7 +31,7 @@ function displayProducts(products) {
                 <div class="card-title">${product.name}</div>
                 <div class="card-text">${product.description}</div>
                 <div class="card-price">Price: Ksh ${product.price}</div>
-                <a href="#" class="btn" data-id="${product.id}">Add To Cart</a>
+                <a href="#" class="btn" data-id="${product.id}" data-price="${product.price}">Add To Cart</a>
             </div>
         `;
         cardContainer.appendChild(card);
@@ -40,11 +43,38 @@ document.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn')) {
         event.preventDefault();
         const productId = event.target.getAttribute('data-id');
-        const product = products.find(p => p.id == productId); // Fix typo here
-        cart.push(product);
-        updateCart();
+        const productPrice = parseInt(event.target.getAttribute('data-price'));
+        
+        // Find product in the fetched data
+        const product = {
+            id: productId,
+            price: productPrice,
+            name: event.target.parentElement.querySelector('.card-title').innerText,
+            image: event.target.parentElement.parentElement.querySelector('img').src
+        };
+        
+        cart.push(product); // Add product to cart
+        totalAmount += productPrice; // Update total amount
+        updateCart(); // Update the cart display
     }
 });
+
+// Update cart display
+function updateCart() {
+    const cartItems = document.getElementById('cartItems');
+    cartItems.innerHTML = ''; 
+
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px;"> ${item.name} - Ksh ${item.price}`;
+        cartItems.appendChild(li);
+    });
+
+    // Display total amount
+    const totalLi = document.createElement('li');
+    totalLi.innerHTML = `<strong>Total: Ksh ${totalAmount}</strong>`;
+    cartItems.appendChild(totalLi);
+}
 
 // Toggle cart menu visibility
 document.getElementById('cartIcon').addEventListener('click', () => {
@@ -55,7 +85,8 @@ document.getElementById('cartIcon').addEventListener('click', () => {
 // Clear cart
 document.getElementById('clearButton').addEventListener('click', () => {
     cart.length = 0; // Clear cart array
-    updateCart();
+    totalAmount = 0; // Reset total amount
+    updateCart(); // Update the cart display
 });
 
 // Rating functionality
@@ -72,5 +103,3 @@ ratingStars.forEach(star => {
         alert('Thank you very much for rating ' + ratingValue + ' stars!');
     });
 });
-
-
