@@ -26,7 +26,7 @@ Smart Soko is an e-commerce web application designed to provide users with a con
      * The cart icon displays the number of items added and allows users to toggle a sidebar to view cart contents.
      * Cart items show product names, prices, and a total amount.
 4.    Checkout and Clear Cart: Users can proceed to checkout or clear the cart entirely.
-5.     Rating System: A simple star rating system allows users to rate their experience, triggering an alert with the selected rating.
+5.    Rating System: A simple star rating system allows users to rate their experience, triggering an alert with the selected rating.
 
 ###   MVP Implementation Details
 1.   Product Display: Products are fetched via a simulated API call (fetchProducts function) and displayed dynamically using JavaScript DOM manipulation.
