@@ -5,6 +5,7 @@ header {
   text-align: center;
 }
 
+
 nav ul {
   list-style-type: none;
 }
@@ -154,13 +155,14 @@ nav ul li a:hover {
 }
 
 .about-us {
-  /* background-image: url('/assets/tomatoes.jpg'); */
+  background-image: url('/assets/bachground.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   font-size: large;
+  color: white;
 }
 
 
@@ -169,10 +171,10 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  /* background-image: url('/assets/spices-2.jpg');
+  background-image: url('/assets/spices-2.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
 }
 
 .card {
@@ -182,7 +184,7 @@ nav ul li a:hover {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+color: white;
 }
 
 .card-img {
@@ -196,6 +198,7 @@ nav ul li a:hover {
 
 .card-content {
   padding: 20px;
+  
 }
 
 .card-title {
@@ -208,6 +211,7 @@ nav ul li a:hover {
   font-size: 1rem;
   color: black;
   line-height: 1.6;
+  color: white;
 }
 
 .btn {
@@ -235,12 +239,18 @@ nav ul li a:hover {
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: url('/assets/bachground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
 .contact-info,
 .contact-form {
   flex: 1;
   padding: 20px;
+  color: white;
 }
 
 .contact-info h2,
