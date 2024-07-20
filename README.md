@@ -46,7 +46,8 @@ Smart Soko is an e-commerce web application designed to provide users with a con
 Smart Soko's MVP demonstrates foundational e-commerce features with a focus on simplicity and functionality. Future iterations will expand capabilities, improving user experience, security, and scalability. This project aims to provide a seamless online shopping experience for farm products while supporting local farmers and ensuring product quality and customer satisfaction.
 
 
-
+###  hosted site.
+The live site: https://sicily-code.netlify.app
 
 
 ## Setup/Installation Requirements
