@@ -1,15 +1,11 @@
 let cart = [];
 let totalAmount = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
-    fetchProducts();
-});
-
-// Function to fetch products from the server
-fetch('/products.json')  // Assuming products.json is in the public folder
+// Directly fetching the products.json
+fetch('/products.json')  // Make sure the path is correct, e.g., '/assets/products.json'
     .then(response => response.json())
-    .then(products => {
-        displayProducts(products);
+    .then(data => {
+        displayProducts(data.products);  // Assuming the data structure has a 'products' key
     })
     .catch(error => {
         console.error('Error when fetching products:', error);
@@ -41,27 +37,17 @@ document.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn')) {
         event.preventDefault();
         const productId = event.target.getAttribute('data-id');
-        console.log(productId);
         const productPrice = parseInt(event.target.getAttribute('data-price'));
-        console.log(productPrice);
 
-
-        // Find product in the fetched data
         const product = {
             id: productId,
             price: productPrice,
-            // name: event.target.parentElement.querySelector('.card-title').innerText,
-            // image: event.target.parentElement.querySelector('.card-img')
-
-
+            // You can add name and image properties here if needed
         };
-        console.log(product);
 
-
-        cart.push(product); // Add product to cart
-        console.log(cart);
-        totalAmount += productPrice; // Update total amount
-        updateCart(); // Update the cart display
+        cart.push(product);  // Add product to cart
+        totalAmount += productPrice;  // Update total amount
+        updateCart();  // Update the cart display
     }
 });
 
@@ -80,23 +66,21 @@ function updateCart() {
     const totalLi = document.createElement('li');
     totalLi.innerHTML = `<strong>Total: Ksh ${totalAmount}</strong>`;
     cartItems.appendChild(totalLi);
-
-    console.log(totalAmount);
 }
 
 // Toggle cart menu visibility
 document.getElementById('cartIcon').addEventListener('click', () => {
     const cartMenu = document.getElementById('cartMenu');
     cartMenu.classList.toggle('cart-menu-hidden');
-
 });
 
 // Clear cart
 document.getElementById('clearButton').addEventListener('click', function () {
-    cart.length = 0; // Clear cart array
-    totalAmount = 0; // Reset total amount
-    updateCart(); // Update the cart display
+    cart.length = 0;  // Clear cart array
+    totalAmount = 0;  // Reset total amount
+    updateCart();  // Update the cart display
 });
+
 
 // Rating functionality
 const rateButton = document.getElementById('rateButton');
