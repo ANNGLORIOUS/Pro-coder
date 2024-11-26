@@ -1,84 +1,87 @@
 let cart = [];
 let totalAmount = 0;
 
-// Directly fetching the products.json
-fetch('/public/products.json')  // Make sure the path is correct, e.g., '/assets/products.json'
-    .then(response => response.json())
-    .then(data => {
-        displayProducts(data.products);  // Assuming the data structure has a 'products' key
-    })
-    .catch(error => {
-        console.error('Error when fetching products:', error);
-    });
+// Fetching product data
+fetch('/public/products.json')
+  .then(response => response.json())
+  .then(data => {
+    displayProducts(data.products);
+  })
+  .catch(error => {
+    console.error('Error when fetching products:', error);
+  });
 
-// Function to display products on the cards
+// Function to display products on cards
 function displayProducts(products) {
-    const cardContainer = document.querySelector('.card-container');
-    cardContainer.innerHTML = '';
+  const cardContainer = document.querySelector('.card-container');
+  cardContainer.innerHTML = '';
 
-    products.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <img class="card-img" src="${product.image}" alt="${product.name}">
-            <div class="card-content">
-                <div class="card-title">${product.name}</div>
-                <div class="card-text">${product.description}</div>
-                <div class="card-price">Price: Ksh ${product.price}</div>
-                <a href="#" class="btn" data-id="${product.id}" data-price="${product.price}">Add To Cart</a>
-            </div>
-        `;
-        cardContainer.appendChild(card);
+  products.forEach(product => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img class="card-img" src="${product.image}" alt="${product.name}">
+      <div class="card-content">
+        <div class="card-title">${product.name}</div>
+        <div class="card-text">${product.description}</div>
+        <div class="card-price">Price: Ksh ${product.price}</div>
+        <a href="#" class="btn" data-id="${product.id}" data-price="${product.price}">Add to cart</a>
+      </div>
+    `;
+    cardContainer.appendChild(card);
+
+    // Add event listener to add to cart
+    card.querySelector('.btn').addEventListener('click', function (e) {
+      e.preventDefault();
+      const productId = e.target.getAttribute('data-id');
+      const productPrice = parseFloat(e.target.getAttribute('data-price'));
+      const productName = e.target.previousElementSibling.previousElementSibling.previousElementSibling.textContent.trim();
+      const productImage = e.target.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.src;
+
+      addToCart({ id: productId, name: productName, price: productPrice, image: productImage });
     });
+  });
 }
 
-// Event listener for adding to cart
-document.addEventListener('click', (event) => {
-    if (event.target.classList.contains('btn')) {
-        event.preventDefault();
-        const productId = event.target.getAttribute('data-id');
-        const productPrice = parseInt(event.target.getAttribute('data-price'));
+// Add product to cart
+function addToCart(product) {
+  cart.push(product);
+  totalAmount += product.price;
+  updateCart();
+}
 
-        const product = {
-            id: productId,
-            price: productPrice,
-            // You can add name and image properties here if needed
-        };
+// Update the cart display
+function updateCart() {
+  const cartItems = document.getElementById('cartItems');
+  cartItems.innerHTML = '';
 
-        cart.push(product);  // Add product to cart
-        totalAmount += productPrice;  // Update total amount
-        updateCart();  // Update the cart display
-    }
+  cart.forEach(product => {
+    const li = document.createElement('li');
+    li.innerHTML = `<img src="${product.image}" alt="${product.name}" style="width: 50px; height: 50px;"> ${product.name} - Ksh ${product.price}`;
+    cartItems.appendChild(li);
+  });
+
+  const totalLi = document.createElement('li');
+  totalLi.innerHTML = `<strong>Total: Ksh ${totalAmount}</strong>`;
+  cartItems.appendChild(totalLi);
+}
+
+// Toggle cart modal visibility
+document.getElementById('cartIcon').addEventListener('click', function () {
+  const cartMenu = document.getElementById('cartMenu');
+  cartMenu.classList.toggle('visible');
 });
 
-// Update cart display
-function updateCart() {
-    const cartItems = document.getElementById('cartItems');
-    cartItems.innerHTML = '';
-
-    cart.forEach(product => {
-        const li = document.createElement('li');
-        li.innerHTML = `<img src="${product.image}" alt="${product.name}" style="width: 50px; height: 50px;"> ${product.name} - Ksh ${product.price}`;
-        cartItems.appendChild(li);
-    });
-
-    // Display total amount
-    const totalLi = document.createElement('li');
-    totalLi.innerHTML = `<strong>Total: Ksh ${totalAmount}</strong>`;
-    cartItems.appendChild(totalLi);
-}
-
-// Toggle cart menu visibility
-document.getElementById('cartIcon').addEventListener('click', () => {
-    const cartMenu = document.getElementById('cartMenu');
-    cartMenu.classList.toggle('cart-menu-hidden');
+// Close the cart modal
+document.getElementById('closeCart').addEventListener('click', function () {
+  document.getElementById('cartMenu').classList.remove('visible');
 });
 
 // Clear cart
 document.getElementById('clearButton').addEventListener('click', function () {
-    cart.length = 0;  // Clear cart array
-    totalAmount = 0;  // Reset total amount
-    updateCart();  // Update the cart display
+  cart.length = 0;  // Clear the cart
+  totalAmount = 0;  // Reset the total
+  updateCart();  // Update the cart display
 });
 
 
