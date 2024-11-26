@@ -2,7 +2,7 @@ let cart = [];
 let totalAmount = 0;
 
 // Directly fetching the products.json
-fetch('/products.json')  // Make sure the path is correct, e.g., '/assets/products.json'
+fetch('/public/products.json')  // Make sure the path is correct, e.g., '/assets/products.json'
     .then(response => response.json())
     .then(data => {
         displayProducts(data.products);  // Assuming the data structure has a 'products' key
