@@ -1,21 +1,19 @@
-let cart = []; // Array to hold cart items
-let totalAmount = 0; // Variable to hold total amount
+let cart = [];
+let totalAmount = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
-    fetchProducts(); // Fetch products when the DOM content is loaded
+    fetchProducts();
 });
 
 // Function to fetch products from the server
-function fetchProducts() {
-    fetch('http://localhost:3000/products')
-        .then(response => response.json())
-        .then(products => {
-            displayProducts(products); // Display products after fetching
-        })
-        .catch(error => {
-            console.error('Error when fetching products:', error);
-        });
-}
+fetch('/products.json')  // Assuming products.json is in the public folder
+    .then(response => response.json())
+    .then(products => {
+        displayProducts(products);
+    })
+    .catch(error => {
+        console.error('Error when fetching products:', error);
+    });
 
 // Function to display products on the cards
 function displayProducts(products) {
@@ -47,7 +45,7 @@ document.addEventListener('click', (event) => {
         const productPrice = parseInt(event.target.getAttribute('data-price'));
         console.log(productPrice);
 
-        
+
         // Find product in the fetched data
         const product = {
             id: productId,
@@ -55,10 +53,10 @@ document.addEventListener('click', (event) => {
             // name: event.target.parentElement.querySelector('.card-title').innerText,
             // image: event.target.parentElement.querySelector('.card-img')
 
-        
+
         };
         console.log(product);
-        
+
 
         cart.push(product); // Add product to cart
         console.log(cart);
